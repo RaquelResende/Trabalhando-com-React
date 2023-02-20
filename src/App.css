@@ -1,0 +1,30 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh ;
+  background-image: linear-gradient(180deg, #00e6e6, #097676,  #042828);
+}
+
+.container{
+width: 250px;
+padding: 10px;
+background-color: #5a8686;
+border-radius: 10px;
+
+}
+.lista{
+ 
+  margin: 10px, 0 0;
+  padding: 5px;
+  
+}
+.list{
+  left: 30px;
+}
+
+.item{
+  width: 100%;
+display: flex;
+
+}
