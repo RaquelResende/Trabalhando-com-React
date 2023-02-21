@@ -5,14 +5,15 @@ import { SemanticClassificationFormat } from 'typescript';
 import './App.css';
 
 function App() {
-let [lista, setLista ] = useState(["Tarefa"]);
+let [lista, setLista ] = useState([""]);
 let [novoItem, setNovoItem] = useState("")
 
   return (
     <Grid className="container">
-    <input value={novoItem} onChange={value => setNovoItem(value.target.value)}  type = "text"/> 
+      <Box className='input'>
+    <input placeholder='Tarefa' value={novoItem} onChange={value => setNovoItem(value.target.value)}  type = "text"/> 
     <button onClick={() => adicionaNovoItem()}> Adicionar</button>
-   
+    </Box>
     <ul className='lista' > 
      {lista.map((item, index)  => (<li key={index} className="item">{item} 
      <button  onClick={() => deletarItem(index)}> deletar</button> 
@@ -22,7 +23,15 @@ let [novoItem, setNovoItem] = useState("")
   );
 
 function adicionaNovoItem() {
+  if (novoItem.length <=0){
+    alert("Por favor, adicione algo no campo de tarefa");
+    return;
+  }
+
+  let itemIndex = lista.indexOf(novoItem);   
   setLista([...lista, novoItem]);
+
+
   setNovoItem("");
 }
 
