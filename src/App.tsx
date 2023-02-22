@@ -38,8 +38,8 @@ function adicionaNovoItem() {
     return;
   }
 
-// let itemIndex = lista.indexOf(novoItem);
-// setLista([...lista, novoItem])
+ let itemIndex = lista.indexOf(novoItem);
+ setLista([...lista, novoItem])
 
 
    setNovoItem("");
